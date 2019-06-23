@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static("views"));
 
-mongoose.connect("mongodb://localhost/mongodbhomework", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/mongodbhomework", { useNewUrlParser: true });
 
 // Routes
 
@@ -83,6 +83,12 @@ app.post("/articles/:id", function(req, res) {
     });
 });
 
-app.listen(process.env.PORT || 3000, function() {
+const port = process.env.PORT || 3000;
+
+app.listen(port, process.env.PORT || 3000, function() {
   console.log("App is live on port " + PORT + "!");
 });
+
+module.exports = app;
+
+
