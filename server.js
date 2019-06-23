@@ -83,12 +83,11 @@ app.post("/articles/:id", function(req, res) {
     });
 });
 
-const port = process.env.PORT || 3000;
 
-app.listen(port, process.env.PORT || 3000, function() {
+app.listen(process.env.PORT || 5000, function() {
   console.log("App is live on port " + PORT + "!");
 });
 
-module.exports = app;
+// module.exports = app;
 
 
