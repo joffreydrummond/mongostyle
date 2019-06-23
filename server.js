@@ -83,6 +83,6 @@ app.post("/articles/:id", function(req, res) {
     });
 });
 
-app.listen(PORT, function() {
+app.listen(process.env.PORT || 3000, function() {
   console.log("App is live on port " + PORT + "!");
 });
